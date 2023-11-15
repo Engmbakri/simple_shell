@@ -59,6 +59,7 @@ void b_exit(char **com, char **av, int *stat, int ln)
 				free(com[x]), com[x] = NULL;
 			free(com), com = NULL;
 			(*stat) = 2;
+			return;
 		}
 	}
 	for (x = 0; com[x]; x++)

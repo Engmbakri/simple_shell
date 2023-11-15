@@ -22,6 +22,17 @@ int exe_command(char **com, char **av, int ln)
 		com = NULL;
 		return (127);
 	}
+	if (bulitin(com[0]))
+	{
+		free(pth);
+		pth = NULL;
+
+		for (x = 0; com[x]; x++)
+			free(com[x]), com[x] = NULL;
+		free(com), com = NULL;
+
+		return (1);  
+	}
 	else
 	{
 		baby = fork();
@@ -46,7 +57,7 @@ int exe_command(char **com, char **av, int ln)
  * ch_process - chiled process
  * @com: command
  * @pth: path
-*/
+ */
 void ch_process(char **com, char *pth)
 {
 	int x;
