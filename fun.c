@@ -104,7 +104,7 @@ char *g_env(char *val)
 }
 /**
  * g_pth - function gets the path
- * @command: input
+ * @command: input from user
  * Return: null
  */
 char *g_pth(char *command)
