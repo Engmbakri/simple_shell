@@ -51,7 +51,7 @@ void ch_process(char **com, char *pth)
 {
 	int x;
 
-	if (execvp(pth, com) == -1)
+	if (execve(pth, com, environ) == -1)
 	{
 		free(pth);
 		pth = NULL;
