@@ -18,20 +18,16 @@ int exe_command(char **com, char **av, int ln)
 		p_err(av[0], com[0], ln);
 		for (x = 0; com[x]; x++)
 			free(com[x]), com[x] = NULL;
-		free(com);
-		com = NULL;
+		free(com), com = NULL;
 		return (127);
 	}
 	if (bulitin(com[0]))
 	{
-		free(pth);
-		pth = NULL;
-
+		free(pth), pth = NULL;
 		for (x = 0; com[x]; x++)
 			free(com[x]), com[x] = NULL;
 		free(com), com = NULL;
-
-		return (1);  
+		return (1);
 	}
 	else
 	{
@@ -45,10 +41,8 @@ int exe_command(char **com, char **av, int ln)
 			waitpid(baby, &status, 0);
 			for (x = 0; com[x]; x++)
 				free(com[x]), com[x] = NULL;
-			free(com);
-			com = NULL;
-			free(pth);
-			pth = NULL;
+			free(com), com = NULL;
+			free(pth), pth = NULL;
 		}
 	}
 	return (WEXITSTATUS(status));
