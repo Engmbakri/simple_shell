@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * s_len - length of string
+ * s_len - function deretmines the length of string
  *
  * @str: string
  *
