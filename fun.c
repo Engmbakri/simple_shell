@@ -64,6 +64,10 @@ char *read_command(void)
 		free(linecom);
 		return (NULL);
 	}
+	if (xx > 1 && linecom[xx - 2] == '\n')
+	{
+		linecom[xx - 2] = '\0';
+	}
 	return (linecom);
 }
 /**
@@ -109,6 +113,8 @@ char *g_pth(char *command)
 	int x = 0;
 	struct stat trac;
 
+	if (command == NULL || *command == '\0')
+		return (NULL);
 	while (command[x])
 	{
 		if (command[x] == '/')
