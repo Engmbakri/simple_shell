@@ -47,7 +47,7 @@ int exe_command(char **com, char **av, int ln)
 /**
  * ch_process - chiled process
  * @com: command
- * @pth: path
+ * @pth: command path
  */
 void ch_process(char **com, char *pth)
 {
