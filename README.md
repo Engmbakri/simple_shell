@@ -1,1 +1,1 @@
-simple shell project
+a simple shell project
