@@ -103,7 +103,7 @@ char *g_env(char *val)
 	return (NULL);
 }
 /**
- * g_pth - get path
+ * g_pth - function gets the path
  * @command: input
  * Return: null
  */
