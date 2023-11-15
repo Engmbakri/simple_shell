@@ -29,21 +29,18 @@ int exe_command(char **com, char **av, int ln)
 		free(com), com = NULL;
 		return (1);
 	}
+	baby = fork();
+	if (baby == 0)
+	{
+		ch_process(com, pth);
+	}
 	else
 	{
-		baby = fork();
-		if (baby == 0)
-		{
-			ch_process(com, pth);
-		}
-		else
-		{
-			waitpid(baby, &status, 0);
-			for (x = 0; com[x]; x++)
-				free(com[x]), com[x] = NULL;
-			free(com), com = NULL;
-			free(pth), pth = NULL;
-		}
+		waitpid(baby, &status, 0);
+		for (x = 0; com[x]; x++)
+			free(com[x]), com[x] = NULL;
+		free(com), com = NULL;
+		free(pth), pth = NULL;
 	}
 	return (WEXITSTATUS(status));
 }
