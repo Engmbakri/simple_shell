@@ -2,8 +2,8 @@
 
 /**
  * main - main point
- * @ac: input
- * @av: input
+ * @ac: args num
+ * @av: args value
  * Return: 0
  */
 int main(int ac, char **av)
