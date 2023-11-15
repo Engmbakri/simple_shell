@@ -2,7 +2,7 @@
 
 /**
  * pos_num - check if number is positive
- * @str: input
+ * @str: input from user
  * Return: 0 or 1
 */
 int pos_num(char *str)

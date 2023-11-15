@@ -1,8 +1,8 @@
 #include"main.h"
 
 /**
- * tok_command - split command
- * @line: input
+ * tok_command - split the command
+ * @line: input from user
  * Return: array
  */
 char **tok_command(char *line)

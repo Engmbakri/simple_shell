@@ -1,7 +1,7 @@
 #include"main.h"
 /**
- * exe_command - execute command
- * @com: command
+ * exe_command - execute the command
+ * @com: command to execute
  * @av: arg
  * @ln: length index
  * Return: stat

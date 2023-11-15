@@ -1,7 +1,7 @@
 #include"main.h"
 /**
- * bulitin - Check if command is bulitin or not
- * @com: command
+ * bulitin - Check the command if it is bulitin or not
+ * @com: command to check
  * Return: 0
  */
 
