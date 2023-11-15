@@ -5,7 +5,7 @@
  * @av: arg
  * @ln: length index
  * Return: stat
-*/
+ */
 int exe_command(char **com, char **av, int ln)
 {
 	char *pth;
@@ -27,15 +27,7 @@ int exe_command(char **com, char **av, int ln)
 		baby = fork();
 		if (baby == 0)
 		{
-			if (execvp(pth, com) == -1)
-			{
-				free(pth);
-				pth = NULL;
-				for (x = 0; com[x]; x++)
-					free(com[x]), com[x] = NULL;
-				free(com);
-				com = NULL;
-			}
+			ch_process(com, pth);
 		}
 		else
 		{
@@ -49,4 +41,23 @@ int exe_command(char **com, char **av, int ln)
 		}
 	}
 	return (WEXITSTATUS(status));
+}
+/**
+ * ch_process - chiled process
+ * @com: command
+ * @pth: path
+*/
+void ch_process(char **com, char *pth)
+{
+	int x;
+
+	if (execvp(pth, com) == -1)
+	{
+		free(pth);
+		pth = NULL;
+		for (x = 0; com[x]; x++)
+			free(com[x]), com[x] = NULL;
+		free(com);
+		com = NULL;
+	}
 }
