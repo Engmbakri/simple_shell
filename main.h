@@ -29,8 +29,7 @@ char *g_env(char *val);
 char *g_pth(char *commond);
 
 int exe_command(char **com, char **av, int ln);
-void exe_relatpth(char **com, char **av, int ln);
-void exe_absolpth(char **com, char **av, int ln);
+void ch_process(char **com, char *pth);
 
 void b_exit(char **com, char **av, int *stat, int ln);
 void b_env(char **com, int *stat);

@@ -43,9 +43,9 @@ void bulitin_com(char **com, char **av, int *stat, int ln)
  */
 void b_exit(char **com, char **av, int *stat, int ln)
 {
-	int x, val;
 
-	val = (*stat);
+	int x, val = (*stat);
+
 	if (com[1] != NULL)
 	{
 		if (pos_num(com[1]))
@@ -55,16 +55,13 @@ void b_exit(char **com, char **av, int *stat, int ln)
 		else
 		{
 			exit_err(com, av, ln);
-			if (!com)
-				return;
 			for (x = 0; com[x]; x++)
 				free(com[x]), com[x] = NULL;
 			free(com), com = NULL;
 			(*stat) = 2;
+			return;
 		}
 	}
-	if (!com)
-		return;
 	for (x = 0; com[x]; x++)
 		free(com[x]), com[x] = NULL;
 	free(com), com = NULL;
@@ -85,8 +82,6 @@ void b_env(char **com, int *stat)
 		write(1, environ[y], s_len(environ[y]));
 		write(1, "\n", 1);
 	}
-	if (!com)
-		return;
 	for (x = 0; com[x]; x++)
 		free(com[x]), com[x] = NULL;
 	free(com), com = NULL;
